@@ -140,3 +140,4 @@ C:\Users\galih\source\repos\EventGo\EventGo\obj\Debug\net8.0-windows\refint\Even
 C:\Users\galih\source\repos\EventGo\EventGo\obj\Debug\net8.0-windows\EventGo.pdb
 C:\Users\galih\source\repos\EventGo\EventGo\obj\Debug\net8.0-windows\EventGo.genruntimeconfig.cache
 C:\Users\galih\source\repos\EventGo\EventGo\obj\Debug\net8.0-windows\ref\EventGo.dll
+C:\Users\galih\source\repos\EventGo\EventGo\obj\Debug\net8.0-windows\EventGo.sourcelink.json

@@ -13,7 +13,23 @@ namespace EventGo
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             base.OnConfiguring(optionsBuilder);
-            optionsBuilder.UseSqlServer("Data Source=. \\SQLEXPRESS;database=eventDb;Trusted_Connection=true;TrustServerCertificate=true");
+            optionsBuilder.UseSqlServer("Data Source=.\\SQLEXPRESS;database=eventDb;Trusted_Connection=true;TrustServerCertificate=true");
+        }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            // Konfigurasi DetailTransaction untuk menghindari cascade path conflict
+            modelBuilder.Entity<DetailTransaction>()
+                .HasOne(dt => dt.Ticket)
+                .WithMany()
+                .HasForeignKey(dt => dt.TicketId)
+                .OnDelete(DeleteBehavior.Restrict); // Mencegah cascade delete
+
+            modelBuilder.Entity<DetailTransaction>()
+                .HasOne(dt => dt.Transaction)
+                .WithMany()
+                .HasForeignKey(dt => dt.TransactionId)
+                .OnDelete(DeleteBehavior.Restrict); // Mencegah cascade delete
         }
 
         public DbSet<User> Users { get; set; }
