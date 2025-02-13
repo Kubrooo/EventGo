@@ -1,4 +1,6 @@
 
+using EventGo.Forms;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage;
 
 namespace EventGo
@@ -17,6 +19,8 @@ namespace EventGo
             base.OnLoad(e);
             _context = new DataContext();
             _context.Database.EnsureCreated();
+            tbEmail.Text = "galihtriardiansyah@gmail.com";
+            tbPassword.Text = "12345";
         }
 
         protected override void OnClosed(EventArgs e)
@@ -24,6 +28,32 @@ namespace EventGo
             base.OnClosed(e);
             _context.Dispose();
             _context = null;
+        }
+
+        private async void btnLogin_Click(object sender, EventArgs e)
+        {
+            if (tbEmail.Text.Length <= 0 || tbPassword.Text.Length <= 0)
+            {
+                MessageBox.Show("Please enter the field properly");
+            }
+
+            var userData = await _context.Users.Where(e => e.Email == tbEmail.Text).FirstOrDefaultAsync();
+            string nameUser = userData.Name.ToString();
+
+            if(userData == null)
+            {
+                MessageBox.Show("user tidak ditemukan", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }else
+            {
+                if(userData.Password == tbPassword.Text)
+                {
+                    int id = userData.Id;
+                    this.Hide();
+                    ManagementForm managementForm = new ManagementForm();
+                    managementForm.Show();
+                }
+            }
         }
     }
 }

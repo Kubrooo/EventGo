@@ -30,8 +30,15 @@ namespace EventGo
                 .WithMany()
                 .HasForeignKey(dt => dt.TransactionId)
                 .OnDelete(DeleteBehavior.Restrict); // Mencegah cascade delete
+
+            modelBuilder.Entity<ViewManagement>(e =>
+            {
+                e.ToView("ViewManagement");
+            }
+            );
         }
 
+        //DB
         public DbSet<User> Users { get; set; }
         public DbSet<Event> Events { get; set; }
         public DbSet<Category> Categories { get; set; }
@@ -39,5 +46,8 @@ namespace EventGo
         public DbSet<Transaction> Transactions { get; set; }
         public DbSet<Ticket> Tickets { get; set; }
         public DbSet<DetailTransaction> DetailTransactions { get; set; }
+
+        //View
+        public DbSet<ViewManagement> ViewManagements { get; set; }
     }
 }

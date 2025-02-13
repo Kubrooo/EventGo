@@ -129,15 +129,16 @@ C:\Users\galih\source\repos\EventGo\EventGo\bin\Debug\net8.0-windows\runtimes\wi
 C:\Users\galih\source\repos\EventGo\EventGo\bin\Debug\net8.0-windows\runtimes\browser\lib\net8.0\System.Text.Encodings.Web.dll
 C:\Users\galih\source\repos\EventGo\EventGo\obj\Debug\net8.0-windows\EventGo.csproj.AssemblyReference.cache
 C:\Users\galih\source\repos\EventGo\EventGo\obj\Debug\net8.0-windows\EventGo.FormLogin.resources
+C:\Users\galih\source\repos\EventGo\EventGo\obj\Debug\net8.0-windows\EventGo.Forms.ManagementForm.resources
 C:\Users\galih\source\repos\EventGo\EventGo\obj\Debug\net8.0-windows\EventGo.csproj.GenerateResource.cache
 C:\Users\galih\source\repos\EventGo\EventGo\obj\Debug\net8.0-windows\EventGo.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\galih\source\repos\EventGo\EventGo\obj\Debug\net8.0-windows\EventGo.AssemblyInfoInputs.cache
 C:\Users\galih\source\repos\EventGo\EventGo\obj\Debug\net8.0-windows\EventGo.AssemblyInfo.cs
 C:\Users\galih\source\repos\EventGo\EventGo\obj\Debug\net8.0-windows\EventGo.csproj.CoreCompileInputs.cache
+C:\Users\galih\source\repos\EventGo\EventGo\obj\Debug\net8.0-windows\EventGo.sourcelink.json
 C:\Users\galih\source\repos\EventGo\EventGo\obj\Debug\net8.0-windows\EventGo.csproj.Up2Date
 C:\Users\galih\source\repos\EventGo\EventGo\obj\Debug\net8.0-windows\EventGo.dll
 C:\Users\galih\source\repos\EventGo\EventGo\obj\Debug\net8.0-windows\refint\EventGo.dll
 C:\Users\galih\source\repos\EventGo\EventGo\obj\Debug\net8.0-windows\EventGo.pdb
 C:\Users\galih\source\repos\EventGo\EventGo\obj\Debug\net8.0-windows\EventGo.genruntimeconfig.cache
 C:\Users\galih\source\repos\EventGo\EventGo\obj\Debug\net8.0-windows\ref\EventGo.dll
-C:\Users\galih\source\repos\EventGo\EventGo\obj\Debug\net8.0-windows\EventGo.sourcelink.json
