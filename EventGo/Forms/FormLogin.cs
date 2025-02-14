@@ -50,8 +50,8 @@ namespace EventGo
                 {
                     int id = userData.Id;
                     this.Hide();
-                    ManagementForm managementForm = new ManagementForm();
-                    managementForm.Show();
+                    EventTicketManagement eventTicketManagement = new EventTicketManagement();
+                    eventTicketManagement.Show();
                 }
             }
         }

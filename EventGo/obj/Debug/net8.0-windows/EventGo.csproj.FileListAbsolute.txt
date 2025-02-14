@@ -129,7 +129,6 @@ C:\Users\galih\source\repos\EventGo\EventGo\bin\Debug\net8.0-windows\runtimes\wi
 C:\Users\galih\source\repos\EventGo\EventGo\bin\Debug\net8.0-windows\runtimes\browser\lib\net8.0\System.Text.Encodings.Web.dll
 C:\Users\galih\source\repos\EventGo\EventGo\obj\Debug\net8.0-windows\EventGo.csproj.AssemblyReference.cache
 C:\Users\galih\source\repos\EventGo\EventGo\obj\Debug\net8.0-windows\EventGo.FormLogin.resources
-C:\Users\galih\source\repos\EventGo\EventGo\obj\Debug\net8.0-windows\EventGo.Forms.ManagementForm.resources
 C:\Users\galih\source\repos\EventGo\EventGo\obj\Debug\net8.0-windows\EventGo.csproj.GenerateResource.cache
 C:\Users\galih\source\repos\EventGo\EventGo\obj\Debug\net8.0-windows\EventGo.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\galih\source\repos\EventGo\EventGo\obj\Debug\net8.0-windows\EventGo.AssemblyInfoInputs.cache
@@ -142,3 +141,6 @@ C:\Users\galih\source\repos\EventGo\EventGo\obj\Debug\net8.0-windows\refint\Even
 C:\Users\galih\source\repos\EventGo\EventGo\obj\Debug\net8.0-windows\EventGo.pdb
 C:\Users\galih\source\repos\EventGo\EventGo\obj\Debug\net8.0-windows\EventGo.genruntimeconfig.cache
 C:\Users\galih\source\repos\EventGo\EventGo\obj\Debug\net8.0-windows\ref\EventGo.dll
+C:\Users\galih\source\repos\EventGo\EventGo\obj\Debug\net8.0-windows\EventGo.Forms.EventManagementForm.resources
+C:\Users\galih\source\repos\EventGo\EventGo\obj\Debug\net8.0-windows\EventGo.Forms.TicketManagementForm.resources
+C:\Users\galih\source\repos\EventGo\EventGo\obj\Debug\net8.0-windows\EventGo.Forms.EventTicketManagement.resources

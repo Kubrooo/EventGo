@@ -16,6 +16,17 @@ namespace EventGo
             optionsBuilder.UseSqlServer("Data Source=.\\SQLEXPRESS;database=eventDb;Trusted_Connection=true;TrustServerCertificate=true");
         }
 
+        //DB
+        public DbSet<User> Users { get; set; }
+        public DbSet<Event> Events { get; set; }
+        public DbSet<Category> Categories { get; set; }
+        public DbSet<Sponsor> Sponsors { get; set; }
+        public DbSet<Transaction> Transactions { get; set; }
+        public DbSet<Ticket> Tickets { get; set; }
+        public DbSet<DetailTransaction> DetailTransactions { get; set; }
+
+        //View
+        public DbSet<VW_TicketDetails> vw_TicketDetails { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             // Konfigurasi DetailTransaction untuk menghindari cascade path conflict
@@ -31,23 +42,10 @@ namespace EventGo
                 .HasForeignKey(dt => dt.TransactionId)
                 .OnDelete(DeleteBehavior.Restrict); // Mencegah cascade delete
 
-            modelBuilder.Entity<ViewManagement>(e =>
-            {
-                e.ToView("ViewManagement");
-            }
+            modelBuilder.Entity<VW_TicketDetails>(e =>
+            e.ToView("vw_TicketDetails")
             );
         }
 
-        //DB
-        public DbSet<User> Users { get; set; }
-        public DbSet<Event> Events { get; set; }
-        public DbSet<Category> Categories { get; set; }
-        public DbSet<Sponsor> Sponsors { get; set; }
-        public DbSet<Transaction> Transactions { get; set; }
-        public DbSet<Ticket> Tickets { get; set; }
-        public DbSet<DetailTransaction> DetailTransactions { get; set; }
-
-        //View
-        public DbSet<ViewManagement> ViewManagements { get; set; }
     }
 }

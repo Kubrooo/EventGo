@@ -1,6 +1,6 @@
 ﻿namespace EventGo.Forms
 {
-    partial class ManagementForm
+    partial class EventManagementForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
             label1 = new Label();
             tbSearch = new TextBox();
             cbFilter = new ComboBox();
@@ -37,12 +36,6 @@
             btnEdit = new Button();
             btnDelete = new Button();
             btnSave = new Button();
-            label2 = new Label();
-            tbTicketId = new TextBox();
-            label3 = new Label();
-            numStock = new NumericUpDown();
-            cbCategory = new ComboBox();
-            label4 = new Label();
             label5 = new Label();
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             tbEventId = new TextBox();
@@ -56,24 +49,20 @@
             dtOpen = new DateTimePicker();
             label10 = new Label();
             dtClosed = new DateTimePicker();
-            managementFormBindingSource = new BindingSource(components);
-            dgManagement = new DataGridView();
-            tbNewCategory = new TextBox();
-            lblNewCategory = new Label();
-            ((System.ComponentModel.ISupportInitialize)numStock).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)managementFormBindingSource).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dgManagement).BeginInit();
+            dgvEvent = new DataGridView();
+            btnCancel = new Button();
+            ((System.ComponentModel.ISupportInitialize)dgvEvent).BeginInit();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 12F);
-            label1.Location = new Point(400, 9);
+            label1.Location = new Point(369, 40);
             label1.Name = "label1";
-            label1.Size = new Size(269, 28);
+            label1.Size = new Size(181, 28);
             label1.TabIndex = 1;
-            label1.Text = "Management Event And Tiket";
+            label1.Text = "Event Management";
             // 
             // tbSearch
             // 
@@ -81,27 +70,30 @@
             tbSearch.Name = "tbSearch";
             tbSearch.Size = new Size(219, 27);
             tbSearch.TabIndex = 2;
+            tbSearch.Leave += tbSearch_Leave;
             // 
             // cbFilter
             // 
             cbFilter.FormattingEnabled = true;
-            cbFilter.Location = new Point(842, 97);
+            cbFilter.Items.AddRange(new object[] { "Coming Soon", "Ended" });
+            cbFilter.Location = new Point(685, 98);
             cbFilter.Name = "cbFilter";
             cbFilter.Size = new Size(151, 28);
             cbFilter.TabIndex = 3;
             // 
             // btnFilter
             // 
-            btnFilter.Location = new Point(742, 96);
+            btnFilter.Location = new Point(585, 97);
             btnFilter.Name = "btnFilter";
             btnFilter.Size = new Size(94, 29);
             btnFilter.TabIndex = 4;
             btnFilter.Text = "Filter";
             btnFilter.UseVisualStyleBackColor = true;
+            btnFilter.Click += btnFilter_Click;
             // 
             // btnCreate
             // 
-            btnCreate.Location = new Point(899, 388);
+            btnCreate.Location = new Point(565, 383);
             btnCreate.Name = "btnCreate";
             btnCreate.Size = new Size(94, 29);
             btnCreate.TabIndex = 5;
@@ -111,25 +103,27 @@
             // 
             // btnEdit
             // 
-            btnEdit.Location = new Point(899, 433);
+            btnEdit.Location = new Point(565, 428);
             btnEdit.Name = "btnEdit";
             btnEdit.Size = new Size(94, 29);
             btnEdit.TabIndex = 6;
             btnEdit.Text = "Edit";
             btnEdit.UseVisualStyleBackColor = true;
+            btnEdit.Click += btnEdit_Click;
             // 
             // btnDelete
             // 
-            btnDelete.Location = new Point(899, 478);
+            btnDelete.Location = new Point(565, 473);
             btnDelete.Name = "btnDelete";
             btnDelete.Size = new Size(94, 29);
             btnDelete.TabIndex = 7;
             btnDelete.Text = "Delete";
             btnDelete.UseVisualStyleBackColor = true;
+            btnDelete.Click += btnDelete_Click;
             // 
             // btnSave
             // 
-            btnSave.Location = new Point(899, 528);
+            btnSave.Location = new Point(565, 523);
             btnSave.Name = "btnSave";
             btnSave.Size = new Size(94, 29);
             btnSave.TabIndex = 8;
@@ -137,60 +131,10 @@
             btnSave.UseVisualStyleBackColor = true;
             btnSave.Click += btnSave_Click;
             // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Location = new Point(84, 365);
-            label2.Name = "label2";
-            label2.Size = new Size(72, 20);
-            label2.TabIndex = 9;
-            label2.Text = "Id Ticket :";
-            // 
-            // tbTicketId
-            // 
-            tbTicketId.Location = new Point(84, 388);
-            tbTicketId.Name = "tbTicketId";
-            tbTicketId.Size = new Size(150, 27);
-            tbTicketId.TabIndex = 10;
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Location = new Point(84, 433);
-            label3.Name = "label3";
-            label3.Size = new Size(89, 20);
-            label3.TabIndex = 11;
-            label3.Text = "Total Stock :";
-            // 
-            // numStock
-            // 
-            numStock.Location = new Point(84, 456);
-            numStock.Name = "numStock";
-            numStock.Size = new Size(150, 27);
-            numStock.TabIndex = 12;
-            // 
-            // cbCategory
-            // 
-            cbCategory.FormattingEnabled = true;
-            cbCategory.Location = new Point(84, 529);
-            cbCategory.Name = "cbCategory";
-            cbCategory.Size = new Size(151, 28);
-            cbCategory.TabIndex = 13;
-            cbCategory.SelectedIndexChanged += cbCategory_SelectedIndexChanged;
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Location = new Point(84, 506);
-            label4.Name = "label4";
-            label4.Size = new Size(76, 20);
-            label4.TabIndex = 14;
-            label4.Text = "Category :";
-            // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(370, 365);
+            label5.Location = new Point(84, 365);
             label5.Name = "label5";
             label5.Size = new Size(69, 20);
             label5.TabIndex = 15;
@@ -198,7 +142,7 @@
             // 
             // tbEventId
             // 
-            tbEventId.Location = new Point(370, 388);
+            tbEventId.Location = new Point(84, 390);
             tbEventId.Name = "tbEventId";
             tbEventId.Size = new Size(157, 27);
             tbEventId.TabIndex = 16;
@@ -206,7 +150,7 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(370, 433);
+            label6.Location = new Point(84, 432);
             label6.Name = "label6";
             label6.Size = new Size(85, 20);
             label6.TabIndex = 17;
@@ -214,7 +158,7 @@
             // 
             // tbEventTitle
             // 
-            tbEventTitle.Location = new Point(370, 456);
+            tbEventTitle.Location = new Point(84, 455);
             tbEventTitle.Name = "tbEventTitle";
             tbEventTitle.Size = new Size(157, 27);
             tbEventTitle.TabIndex = 18;
@@ -222,7 +166,7 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(370, 506);
+            label7.Location = new Point(84, 505);
             label7.Name = "label7";
             label7.Size = new Size(96, 20);
             label7.TabIndex = 19;
@@ -232,14 +176,14 @@
             // 
             cbStatus.FormattingEnabled = true;
             cbStatus.Items.AddRange(new object[] { "Coming Soon", "Ended" });
-            cbStatus.Location = new Point(370, 529);
+            cbStatus.Location = new Point(84, 528);
             cbStatus.Name = "cbStatus";
             cbStatus.Size = new Size(157, 28);
             cbStatus.TabIndex = 20;
             // 
             // rtbDescription
             // 
-            rtbDescription.Location = new Point(605, 388);
+            rtbDescription.Location = new Point(301, 388);
             rtbDescription.Name = "rtbDescription";
             rtbDescription.Size = new Size(231, 81);
             rtbDescription.TabIndex = 21;
@@ -248,7 +192,7 @@
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new Point(605, 365);
+            label8.Location = new Point(301, 365);
             label8.Name = "label8";
             label8.Size = new Size(92, 20);
             label8.TabIndex = 22;
@@ -257,7 +201,7 @@
             // label9
             // 
             label9.AutoSize = true;
-            label9.Location = new Point(605, 482);
+            label9.Location = new Point(301, 482);
             label9.Name = "label9";
             label9.Size = new Size(88, 20);
             label9.TabIndex = 23;
@@ -265,7 +209,7 @@
             // 
             // dtOpen
             // 
-            dtOpen.Location = new Point(605, 506);
+            dtOpen.Location = new Point(301, 506);
             dtOpen.Name = "dtOpen";
             dtOpen.Size = new Size(159, 27);
             dtOpen.TabIndex = 24;
@@ -273,7 +217,7 @@
             // label10
             // 
             label10.AutoSize = true;
-            label10.Location = new Point(605, 548);
+            label10.Location = new Point(301, 548);
             label10.Name = "label10";
             label10.Size = new Size(97, 20);
             label10.TabIndex = 25;
@@ -281,48 +225,42 @@
             // 
             // dtClosed
             // 
-            dtClosed.Location = new Point(605, 571);
+            dtClosed.Location = new Point(301, 571);
             dtClosed.Name = "dtClosed";
             dtClosed.Size = new Size(159, 27);
             dtClosed.TabIndex = 26;
             // 
-            // dgManagement
+            // dgvEvent
             // 
-            dgManagement.AllowUserToAddRows = false;
-            dgManagement.AllowUserToDeleteRows = false;
-            dgManagement.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgManagement.Location = new Point(84, 144);
-            dgManagement.Name = "dgManagement";
-            dgManagement.ReadOnly = true;
-            dgManagement.RowHeadersVisible = false;
-            dgManagement.RowHeadersWidth = 51;
-            dgManagement.Size = new Size(909, 204);
-            dgManagement.TabIndex = 27;
+            dgvEvent.AllowUserToAddRows = false;
+            dgvEvent.AllowUserToDeleteRows = false;
+            dgvEvent.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvEvent.Location = new Point(84, 144);
+            dgvEvent.Name = "dgvEvent";
+            dgvEvent.ReadOnly = true;
+            dgvEvent.RowHeadersVisible = false;
+            dgvEvent.RowHeadersWidth = 51;
+            dgvEvent.Size = new Size(752, 204);
+            dgvEvent.TabIndex = 27;
+            dgvEvent.CellClick += dgvEvent_CellClick;
             // 
-            // tbNewCategory
+            // btnCancel
             // 
-            tbNewCategory.Location = new Point(84, 598);
-            tbNewCategory.Name = "tbNewCategory";
-            tbNewCategory.Size = new Size(151, 27);
-            tbNewCategory.TabIndex = 28;
+            btnCancel.Location = new Point(565, 572);
+            btnCancel.Name = "btnCancel";
+            btnCancel.Size = new Size(94, 29);
+            btnCancel.TabIndex = 28;
+            btnCancel.Text = "Cancel";
+            btnCancel.UseVisualStyleBackColor = true;
+            btnCancel.Click += btnCancel_Click;
             // 
-            // lblNewCategory
-            // 
-            lblNewCategory.AutoSize = true;
-            lblNewCategory.Location = new Point(84, 575);
-            lblNewCategory.Name = "lblNewCategory";
-            lblNewCategory.Size = new Size(110, 20);
-            lblNewCategory.TabIndex = 29;
-            lblNewCategory.Text = "New Category :";
-            // 
-            // ManagementForm
+            // EventManagementForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1072, 699);
-            Controls.Add(lblNewCategory);
-            Controls.Add(tbNewCategory);
-            Controls.Add(dgManagement);
+            ClientSize = new Size(938, 699);
+            Controls.Add(btnCancel);
+            Controls.Add(dgvEvent);
             Controls.Add(dtClosed);
             Controls.Add(label10);
             Controls.Add(dtOpen);
@@ -335,12 +273,6 @@
             Controls.Add(label6);
             Controls.Add(tbEventId);
             Controls.Add(label5);
-            Controls.Add(label4);
-            Controls.Add(cbCategory);
-            Controls.Add(numStock);
-            Controls.Add(label3);
-            Controls.Add(tbTicketId);
-            Controls.Add(label2);
             Controls.Add(btnSave);
             Controls.Add(btnDelete);
             Controls.Add(btnEdit);
@@ -349,13 +281,12 @@
             Controls.Add(cbFilter);
             Controls.Add(tbSearch);
             Controls.Add(label1);
-            Name = "ManagementForm";
+            FormBorderStyle = FormBorderStyle.None;
+            Name = "EventManagementForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "ManagementForm";
             Load += ManagementForm_Load;
-            ((System.ComponentModel.ISupportInitialize)numStock).EndInit();
-            ((System.ComponentModel.ISupportInitialize)managementFormBindingSource).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dgManagement).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvEvent).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -369,12 +300,6 @@
         private Button btnEdit;
         private Button btnDelete;
         private Button btnSave;
-        private Label label2;
-        private TextBox tbTicketId;
-        private Label label3;
-        private NumericUpDown numStock;
-        private ComboBox cbCategory;
-        private Label label4;
         private Label label5;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private TextBox tbEventId;
@@ -388,9 +313,7 @@
         private DateTimePicker dtOpen;
         private Label label10;
         private DateTimePicker dtClosed;
-        private BindingSource managementFormBindingSource;
-        private DataGridView dgManagement;
-        private TextBox tbNewCategory;
-        private Label lblNewCategory;
+        private DataGridView dgvEvent;
+        private Button btnCancel;
     }
 }
