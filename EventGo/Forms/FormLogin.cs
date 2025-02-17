@@ -48,10 +48,19 @@ namespace EventGo
             {
                 if(userData.Password == tbPassword.Text)
                 {
-                    int id = userData.Id;
-                    this.Hide();
-                    EventTicketManagement eventTicketManagement = new EventTicketManagement();
-                    eventTicketManagement.Show();
+                    if(userData.Role == "Event Manager")
+                    {
+                        int id = userData.Id;
+                        this.Hide();
+                        EventTicketManagement eventTicketManagement = new EventTicketManagement();
+                        eventTicketManagement.Show();
+                    } else if(userData.Role == "Petugas Tiket")
+                    {
+                        int id = userData.Id;
+                        this.Hide();
+                        TicketPayment ticketPayment = new TicketPayment();
+                        ticketPayment.Show();
+                    }
                 }
             }
         }

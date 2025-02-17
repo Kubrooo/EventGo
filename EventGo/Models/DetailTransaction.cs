@@ -16,5 +16,6 @@ namespace EventGo.Models
 
         public int TransactionId { get; set; }
         public Transaction Transaction { get; set; }
+        public decimal TotalPrice { get; set; }
     }
 }

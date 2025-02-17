@@ -144,3 +144,4 @@ C:\Users\galih\source\repos\EventGo\EventGo\obj\Debug\net8.0-windows\ref\EventGo
 C:\Users\galih\source\repos\EventGo\EventGo\obj\Debug\net8.0-windows\EventGo.Forms.EventManagementForm.resources
 C:\Users\galih\source\repos\EventGo\EventGo\obj\Debug\net8.0-windows\EventGo.Forms.TicketManagementForm.resources
 C:\Users\galih\source\repos\EventGo\EventGo\obj\Debug\net8.0-windows\EventGo.Forms.EventTicketManagement.resources
+C:\Users\galih\source\repos\EventGo\EventGo\obj\Debug\net8.0-windows\EventGo.Forms.TicketPayment.resources

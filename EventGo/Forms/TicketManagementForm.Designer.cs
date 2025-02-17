@@ -45,6 +45,9 @@
             btnSave = new Button();
             numStock = new NumericUpDown();
             label5 = new Label();
+            tbCategory = new TextBox();
+            label6 = new Label();
+            addCategory = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvTicket).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numPrice).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numStock).BeginInit();
@@ -207,11 +210,40 @@
             label5.TabIndex = 16;
             label5.Text = "Total Stock :";
             // 
+            // tbCategory
+            // 
+            tbCategory.Location = new Point(490, 337);
+            tbCategory.Name = "tbCategory";
+            tbCategory.Size = new Size(161, 27);
+            tbCategory.TabIndex = 17;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Location = new Point(492, 311);
+            label6.Name = "label6";
+            label6.Size = new Size(137, 20);
+            label6.TabIndex = 18;
+            label6.Text = "Add new category :";
+            // 
+            // addCategory
+            // 
+            addCategory.Location = new Point(490, 376);
+            addCategory.Name = "addCategory";
+            addCategory.Size = new Size(139, 29);
+            addCategory.TabIndex = 19;
+            addCategory.Text = "Add Category";
+            addCategory.UseVisualStyleBackColor = true;
+            addCategory.Click += addCategory_Click;
+            // 
             // TicketManagementForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(759, 618);
+            Controls.Add(addCategory);
+            Controls.Add(label6);
+            Controls.Add(tbCategory);
             Controls.Add(label5);
             Controls.Add(numStock);
             Controls.Add(btnSave);
@@ -259,5 +291,8 @@
         private Button btnSave;
         private NumericUpDown numStock;
         private Label label5;
+        private TextBox tbCategory;
+        private Label label6;
+        private Button addCategory;
     }
 }

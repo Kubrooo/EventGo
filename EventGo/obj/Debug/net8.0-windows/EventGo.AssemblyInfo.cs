@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("EventGo")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+cddbc67f3d2be1c7351745f33f33359b384afaae")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+041c63fc18edc4c15070afcaeab0430f2301fd89")]
 [assembly: System.Reflection.AssemblyProductAttribute("EventGo")]
 [assembly: System.Reflection.AssemblyTitleAttribute("EventGo")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

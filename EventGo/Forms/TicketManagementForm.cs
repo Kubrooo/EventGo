@@ -99,7 +99,7 @@ namespace EventGo.Forms
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            if(dgClick == null)
+            if (dgClick == null)
             {
                 MessageBox.Show("Please Select one row to edit");
             }
@@ -118,12 +118,12 @@ namespace EventGo.Forms
 
         private async void actionEdit()
         {
-            using(var _context = new DataContext())
+            using (var _context = new DataContext())
             {
-                if(selectedTicketId != null)
+                if (selectedTicketId != null)
                 {
                     Ticket editTargetTicket = await _context.Tickets.FindAsync(selectedTicketId);
-                    if(editTargetTicket != null)
+                    if (editTargetTicket != null)
                     {
                         editTargetTicket.Price = (int)numPrice.Value;
                         editTargetTicket.Total_stock = (int)numStock.Value;
@@ -152,7 +152,7 @@ namespace EventGo.Forms
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            if(dgClick == null)
+            if (dgClick == null)
             {
                 MessageBox.Show("Please select one row to delete");
             }
@@ -170,7 +170,7 @@ namespace EventGo.Forms
 
         private async void actionDelete()
         {
-            using(var _context = new DataContext())
+            using (var _context = new DataContext())
             {
                 if (selectedTicketId != null)
                 {
@@ -255,6 +255,24 @@ namespace EventGo.Forms
             disableField();
             btnEdit.Enabled = true;
             btnDelete.Enabled = true;
+        }
+
+        private void addCategory_Click(object sender, EventArgs e)
+        {
+            using(var _context = new DataContext())
+            {
+                Category newCategory = new Category()
+                {
+                    Name = tbCategory.Text.ToString(),
+                    Created_at = DateTime.Now,
+                    Updated_at = DateTime.Now
+                };
+                _context.Categories.Add(newCategory);
+                _context.SaveChanges();
+                loadComboboxData();
+                MessageBox.Show("Category Added");
+                tbCategory.Text = "";
+            }
         }
     }
 }
