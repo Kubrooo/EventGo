@@ -14,6 +14,7 @@ namespace EventGo.Forms
     {
         EventManagementForm eventManagementForm;
         TicketManagementForm ticketManagementForm;
+        SponsorshipManagement SponsorshipManagement;
         Form currentOpenForm;
         public EventTicketManagement()
         {
@@ -54,6 +55,19 @@ namespace EventGo.Forms
             if (currentOpenForm != null)
             {
                 currentOpenForm.Close();
+            }
+        }
+
+        private void btnSponsorship_Click(object sender, EventArgs e)
+        {
+            if(ticketManagementForm == null)
+            {
+                closeCurrentForm();
+                SponsorshipManagement = new SponsorshipManagement();
+                SponsorshipManagement.MdiParent = this;
+                SponsorshipManagement.Dock = DockStyle.Fill;
+                SponsorshipManagement.Show();
+                currentOpenForm = SponsorshipManagement;
             }
         }
     }

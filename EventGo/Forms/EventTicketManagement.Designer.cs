@@ -31,6 +31,7 @@
             panel1 = new Panel();
             label1 = new Label();
             panel2 = new Panel();
+            btnSponsorship = new Button();
             btnTicket = new Button();
             btnEvent = new Button();
             panel1.SuspendLayout();
@@ -57,6 +58,7 @@
             // 
             // panel2
             // 
+            panel2.Controls.Add(btnSponsorship);
             panel2.Controls.Add(btnTicket);
             panel2.Controls.Add(btnEvent);
             panel2.Dock = DockStyle.Left;
@@ -64,6 +66,16 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(250, 626);
             panel2.TabIndex = 1;
+            // 
+            // btnSponsorship
+            // 
+            btnSponsorship.Location = new Point(23, 101);
+            btnSponsorship.Name = "btnSponsorship";
+            btnSponsorship.Size = new Size(201, 29);
+            btnSponsorship.TabIndex = 2;
+            btnSponsorship.Text = "Sponsorship Management";
+            btnSponsorship.UseVisualStyleBackColor = true;
+            btnSponsorship.Click += btnSponsorship_Click;
             // 
             // btnTicket
             // 
@@ -109,5 +121,6 @@
         private Panel panel2;
         private Button btnTicket;
         private Button btnEvent;
+        private Button btnSponsorship;
     }
 }

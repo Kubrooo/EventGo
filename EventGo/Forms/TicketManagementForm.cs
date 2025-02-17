@@ -75,6 +75,7 @@ namespace EventGo.Forms
             enableField();
             btnEdit.Enabled = false;
             btnDelete.Enabled = false;
+            btnCreate.Enabled = false;
             operation = "Create";
         }
 
@@ -94,6 +95,9 @@ namespace EventGo.Forms
                 loadViewData();
                 disableField();
                 clearField();
+                btnCreate.Enabled = true;
+                btnEdit.Enabled = true;
+                btnDelete.Enabled = true;
             }
         }
 

@@ -19,7 +19,7 @@ namespace EventGo
             base.OnLoad(e);
             _context = new DataContext();
             _context.Database.EnsureCreated();
-            tbEmail.Text = "galihtriardiansyah@gmail.com";
+            tbEmail.Text = "ardiansyah@gmail.com";
             tbPassword.Text = "12345";
         }
 
