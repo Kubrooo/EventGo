@@ -34,6 +34,7 @@
             btnSponsorship = new Button();
             btnTicket = new Button();
             btnEvent = new Button();
+            btnEventSummary = new Button();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             SuspendLayout();
@@ -58,6 +59,7 @@
             // 
             // panel2
             // 
+            panel2.Controls.Add(btnEventSummary);
             panel2.Controls.Add(btnSponsorship);
             panel2.Controls.Add(btnTicket);
             panel2.Controls.Add(btnEvent);
@@ -97,6 +99,16 @@
             btnEvent.UseVisualStyleBackColor = true;
             btnEvent.Click += btnEvent_Click;
             // 
+            // btnEventSummary
+            // 
+            btnEventSummary.Location = new Point(23, 149);
+            btnEventSummary.Name = "btnEventSummary";
+            btnEventSummary.Size = new Size(201, 29);
+            btnEventSummary.TabIndex = 3;
+            btnEventSummary.Text = "Event Summary";
+            btnEventSummary.UseVisualStyleBackColor = true;
+            btnEventSummary.Click += btnEventSummary_Click;
+            // 
             // EventTicketManagement
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -122,5 +134,6 @@
         private Button btnTicket;
         private Button btnEvent;
         private Button btnSponsorship;
+        private Button btnEventSummary;
     }
 }

@@ -237,12 +237,13 @@
             // 
             // btnShowDeleted
             // 
-            btnShowDeleted.Location = new Point(672, 461);
+            btnShowDeleted.Location = new Point(533, 354);
             btnShowDeleted.Name = "btnShowDeleted";
             btnShowDeleted.Size = new Size(143, 29);
             btnShowDeleted.TabIndex = 20;
             btnShowDeleted.Text = "Show Deleted";
             btnShowDeleted.UseVisualStyleBackColor = true;
+            btnShowDeleted.Click += btnShowDeleted_Click;
             // 
             // SponsorshipManagement
             // 

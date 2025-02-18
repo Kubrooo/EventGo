@@ -196,7 +196,23 @@ namespace EventGo.Forms
 
         private void btnRestoreSponsor_Click(object sender, EventArgs e)
         {
-
+            var sponsor = _context.Sponsors.Find(selectedSponsorId);
+            if(sponsor != null)
+            {
+                var confirm = MessageBox.Show("Are you sure want to restore this sponsor?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (confirm == DialogResult.Yes)
+                {
+                    sponsor.deleted_at = null;
+                    _context.SaveChanges();
+                    MessageBox.Show("Sponsor berhasil direstore", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    loadSponsors(selectedEventId);
+                    calculateTotalBudget(selectedEventId);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please select one row to restore", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void dgvSponsors_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -206,6 +222,7 @@ namespace EventGo.Forms
             {
                 var selectedSponsor = (SponsorDTO)bindingSource[e.RowIndex];
                 selectedSponsorId = selectedSponsor.Id;
+                btnRestoreSponsor.Enabled = true;
                 tbSponsorName.Text = selectedSponsor.Brand;
                 tbPicName.Text = selectedSponsor.Pic_name;
                 tbPicNumber.Text = selectedSponsor.Pic_number;
@@ -219,7 +236,7 @@ namespace EventGo.Forms
 
         private async void actionEdit()
         {
-            using(var _context = new DataContext())
+            using (var _context = new DataContext())
             {
                 var sponsor = await _context.Sponsors.FindAsync(selectedSponsorId);
                 sponsor.Brand = tbSponsorName.Text;
@@ -245,6 +262,29 @@ namespace EventGo.Forms
                 .Sum(s => decimal.TryParse(s.Budget, out var value) ? value : 0); // Konversi aman
 
             lblTotalAmount.Text = $"Total Budget: {totalBudget:N0}"; // Format angka dengan pemisah ribuan
+        }
+
+        private void loadDeletedSponsors()
+        {
+            var deletedSponsor = _context.Sponsors
+                .Where(s => s.deleted_at != null)
+                .Select(s => new SponsorDTO
+                {
+                    Id = s.Id,
+                    Brand = s.Brand,
+                    Pic_name = s.Pic_name,
+                    Pic_number = s.Pic_number,
+                    Budget = s.Budget,
+                    EventName = s.Event.Title
+                })
+                .ToList();
+            bindingSource.DataSource = deletedSponsor;
+            dgvSponsors.DataSource = bindingSource;
+        }
+
+        private void btnShowDeleted_Click(object sender, EventArgs e)
+        {
+            loadDeletedSponsors();
         }
     }
 }

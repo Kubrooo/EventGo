@@ -82,7 +82,9 @@ namespace EventGo.Forms
             {
                 TicketId = selectedTicket.Id,
                 Ticket = selectedTicket,
-                Quantity = quantity
+                Quantity = quantity,
+                TotalPrice = selectedTicket.Price * quantity
+
             };
             _keranjang.Add(detail);
             UpdateKeranjang();

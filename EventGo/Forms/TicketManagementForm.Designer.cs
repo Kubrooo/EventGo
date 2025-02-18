@@ -72,7 +72,7 @@
             dgvTicket.ReadOnly = true;
             dgvTicket.RowHeadersVisible = false;
             dgvTicket.RowHeadersWidth = 51;
-            dgvTicket.Size = new Size(637, 207);
+            dgvTicket.Size = new Size(628, 207);
             dgvTicket.TabIndex = 1;
             dgvTicket.CellClick += dgvTicket_CellClick;
             // 
@@ -240,7 +240,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(759, 618);
+            ClientSize = new Size(745, 618);
             Controls.Add(addCategory);
             Controls.Add(label6);
             Controls.Add(tbCategory);

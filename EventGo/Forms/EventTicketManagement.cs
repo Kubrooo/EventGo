@@ -14,8 +14,11 @@ namespace EventGo.Forms
     {
         EventManagementForm eventManagementForm;
         TicketManagementForm ticketManagementForm;
-        SponsorshipManagement SponsorshipManagement;
+        SponsorshipManagement sponsorshipManagement;
+        SummaryForm summaryForm;
         Form currentOpenForm;
+
+
         public EventTicketManagement()
         {
             InitializeComponent();
@@ -51,6 +54,9 @@ namespace EventGo.Forms
         {
             eventManagementForm = null;
             ticketManagementForm = null;
+            summaryForm = null;
+            sponsorshipManagement = null;
+
 
             if (currentOpenForm != null)
             {
@@ -60,14 +66,27 @@ namespace EventGo.Forms
 
         private void btnSponsorship_Click(object sender, EventArgs e)
         {
-            if(ticketManagementForm == null)
+            if (ticketManagementForm == null)
             {
                 closeCurrentForm();
-                SponsorshipManagement = new SponsorshipManagement();
-                SponsorshipManagement.MdiParent = this;
-                SponsorshipManagement.Dock = DockStyle.Fill;
-                SponsorshipManagement.Show();
-                currentOpenForm = SponsorshipManagement;
+                sponsorshipManagement = new SponsorshipManagement();
+                sponsorshipManagement.MdiParent = this;
+                sponsorshipManagement.Dock = DockStyle.Fill;
+                sponsorshipManagement.Show();
+                currentOpenForm = sponsorshipManagement;
+            }
+        }
+
+        private void btnEventSummary_Click(object sender, EventArgs e)
+        {
+            if (ticketManagementForm == null)
+            {
+                closeCurrentForm();
+                SummaryForm summaryForm = new SummaryForm();
+                summaryForm.MdiParent = this;
+                summaryForm.Dock = DockStyle.Fill;
+                summaryForm.Show();
+                currentOpenForm = summaryForm;
             }
         }
     }
