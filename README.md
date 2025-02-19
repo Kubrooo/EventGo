@@ -32,10 +32,6 @@ EventGo/
 └── ...
 ```
 
-## 📸 Preview Tampilan
-
-
-
 ## 🚀 Cara Menjalankan Aplikasi
 
 1. **Clone repositori** ini:
@@ -64,5 +60,5 @@ MIT License © 2025 EventGo Developers.
 
 ---
 
-✨ **Dibuat dengan ❤️ oleh Tim EventGo** ✨
+✨ **Dibuat dengan ❤️ oleh Kubrooo😁** ✨
 
